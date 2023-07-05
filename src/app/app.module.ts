@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './DataService';
+import {PublicModule} from "./public/public.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +16,10 @@ import { DataService } from './DataService';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataService)
+    HttpClientInMemoryWebApiModule.forRoot(DataService),
+    PublicModule,
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

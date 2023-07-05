@@ -1,0 +1,29 @@
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5% 0;
+
+  .form-card {
+    justify-content: center;
+
+    .form {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+
+      .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .field-full-width {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
