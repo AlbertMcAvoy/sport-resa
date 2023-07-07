@@ -1,0 +1,4 @@
+<app-login *ngIf="router.url === '/user/login'"
+           (submitForm)="connection($event)"
+></app-login>
+<app-register *ngIf="router.url === '/user/register'"></app-register>

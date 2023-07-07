@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -7,6 +7,8 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+  @Output() submitForm: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
   public userForm: FormGroup; // variable is created of type FormGroup is created
 
@@ -22,5 +24,9 @@ export class LoginComponent {
         Validators.required
       ]))
     });
+  }
+
+  submit() {
+    this.submitForm.emit(this.userForm);
   }
 }
