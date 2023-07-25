@@ -10,9 +10,10 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { PublicComponent } from './view/smart/public/public.component';
 import { PrivateComponent } from './view/smart/private/private.component';
+import {authGuard} from "../shared/application/auth.guard";
 
 const userRoutes: Routes = [
-  { path: `account`, component: PrivateComponent },
+  { path: `account`, component: PrivateComponent, canActivate: [authGuard] },
   { path: `**`, component: PublicComponent }
 ]
 
