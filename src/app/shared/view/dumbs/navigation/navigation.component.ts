@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {LocalStorageService} from "../../application/local-storage.service";
+import {LocalStorageService} from "../../../application/local-storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +12,8 @@ export class NavigationComponent {
   isLoggedIn = false;
 
   constructor(
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    public router: Router,
   ) {
     localStorageService.tokenValue.subscribe((nextValue) => {
       this.isLoggedIn = nextValue !== "undefined";
@@ -19,6 +21,7 @@ export class NavigationComponent {
   }
 
   logOut() {
-    this.localStorageService.token = "undefined";
+    this.localStorageService.token = "undefined"
+    this.router.navigate(['/']);
   }
 }
