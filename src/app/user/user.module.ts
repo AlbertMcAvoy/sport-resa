@@ -9,6 +9,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { PublicComponent } from './view/smart/public/public.component';
+import {LocalStorageService} from "../shared/application/local-storage.service";
 
 const userRoutes: Routes = [
   { path: `**`, component: PublicComponent }

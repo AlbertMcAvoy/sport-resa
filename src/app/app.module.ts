@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SharedModule} from "./shared/shared.module";
 import {UserModule} from "./user/user.module";
 import {HomeComponent} from "./view/home/home.component";
+import {LocalStorageService} from "./shared/application/local-storage.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {HomeComponent} from "./view/home/home.component";
     SharedModule,
     UserModule
   ],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

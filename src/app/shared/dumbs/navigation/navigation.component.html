@@ -4,6 +4,7 @@
     <div fxLayoutGap="50">
       <a mat-button aria-label="Se connecter" [routerLink]="'user/login'" *ngIf="!isLoggedIn">Se connecter</a>
       <a mat-flat-button color="accent" aria-label="S'inscrire" [routerLink]="'user/register'" *ngIf="!isLoggedIn">S'inscrire</a>
+      <a mat-button aria-label="Se déconnecter" (click)="logOut()" *ngIf="isLoggedIn">Se déconnecter</a>
     </div>
   </mat-toolbar>
 </mat-sidenav-container>

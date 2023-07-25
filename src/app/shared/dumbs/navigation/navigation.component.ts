@@ -1,15 +1,24 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {LocalStorageService} from "../../application/local-storage.service";
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
 
   isLoggedIn = false;
 
-  ngOnInit(): void {
-    this.isLoggedIn = localStorage.getItem('token') !== undefined;
+  constructor(
+    private localStorageService: LocalStorageService
+  ) {
+    localStorageService.tokenValue.subscribe((nextValue) => {
+      this.isLoggedIn = nextValue !== "undefined";
+    })
+  }
+
+  logOut() {
+    this.localStorageService.token = "undefined";
   }
 }
