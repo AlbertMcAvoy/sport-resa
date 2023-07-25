@@ -21,8 +21,4 @@ export class AuthenticationService {
 
     return this.http.post<User>(`${this.authUrl}/login`, {mail: email, password}, httpOptions);
   }
-
-  logout() {
-    this.user = undefined;
-  }
 }

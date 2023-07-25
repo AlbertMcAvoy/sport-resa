@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col m6 s12" *ngFor="let gym of gymList">
+      <div class="card horizontal">
+        <div class="card-content">
+          <span class="card-title"> {{ gym.name }} </span>
+          <p> {{ gym.city }} - {{ gym.zipCode }} </p>
+          <p> Ouvert de : {{ gym.opening }} à {{ gym.closing }}</p>
+          <a mat-flat-button color="accent" aria-label="Réserver" (click)="book()" *ngIf="isLoggedIn">Réserver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

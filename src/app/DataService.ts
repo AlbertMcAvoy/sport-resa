@@ -42,6 +42,7 @@ export class DataService implements InMemoryDbService {
 
     const gyms = [{
       id: 1,
+      name: "BasicFit",
       city: "Valence",
       zipCode: "26000",
       opening: "8:00",
@@ -49,6 +50,7 @@ export class DataService implements InMemoryDbService {
     },
     {
       id: 2,
+      name: "Fitness Park",
       city: "Aurillac",
       zipCode: "15000",
       opening: "9:00",

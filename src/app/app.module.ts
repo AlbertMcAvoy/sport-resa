@@ -10,6 +10,8 @@ import {SharedModule} from "./shared/shared.module";
 import {UserModule} from "./user/user.module";
 import {HomeComponent} from "./view/home/home.component";
 import {LocalStorageService} from "./shared/application/local-storage.service";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -20,10 +22,12 @@ import {LocalStorageService} from "./shared/application/local-storage.service";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataService,  { dataEncapsulation: false }),
+    HttpClientInMemoryWebApiModule.forRoot(DataService, {dataEncapsulation: false}),
     BrowserAnimationsModule,
     SharedModule,
-    UserModule
+    UserModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]
