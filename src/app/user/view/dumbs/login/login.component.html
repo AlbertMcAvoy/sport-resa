@@ -1,21 +1,28 @@
 <div class="form-container">
-  <mat-card class="form-card">
-    <form class="form" [formGroup]="userForm">
 
-      <mat-form-field class="" appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Entrez votre Email" name="email" type="email" formControlName="email" required class="field">
-      </mat-form-field>
+  <div style="display: flex; flex-direction: column; justify-content: center; gap: 15px">
+    <mat-card *ngIf="errorMessage" style="background-color: rgba(255,0,0,0.59); color: white">
+      <mat-card-content> {{ errorMessage }}</mat-card-content>
+    </mat-card>
 
-      <mat-form-field class="" appearance="outline">
-        <mat-label>Mot de passe</mat-label>
-        <input matInput placeholder="Entrez votre mot de passe" name="password" type="password" formControlName="password" required>
-      </mat-form-field>
+    <mat-card class="form-card">
+      <form class="form" [formGroup]="userForm">
 
-      <div class="actions">
-        <button mat-raised-button color="primary" (click)="submit()">Se connecter</button>
-        <button mat-flat-button [routerLink]="'/register'">S'inscrire</button>
-      </div>
-    </form>
-  </mat-card>
+        <mat-form-field class="" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Entrez votre Email" name="email" type="email" formControlName="email" required class="field">
+        </mat-form-field>
+
+        <mat-form-field class="" appearance="outline">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput placeholder="Entrez votre mot de passe" name="password" type="password" formControlName="password" required>
+        </mat-form-field>
+
+        <div class="actions">
+          <button mat-raised-button color="primary" (click)="submit()">Se connecter</button>
+          <button mat-flat-button [routerLink]="'/register'">S'inscrire</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
 </div>

@@ -30,7 +30,7 @@ export class PublicComponent {
         },
         error: (err) => {
           console.log(err);
-          this.errorMessage = err
+          this.errorMessage = err.body.msg;
         }
       });
   }
