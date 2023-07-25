@@ -19,7 +19,7 @@ import {HomeComponent} from "./view/home/home.component";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataService),
+    HttpClientInMemoryWebApiModule.forRoot(DataService,  { dataEncapsulation: false }),
     BrowserAnimationsModule,
     SharedModule,
     UserModule

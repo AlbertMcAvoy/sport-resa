@@ -2,8 +2,8 @@
   <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
     <a mat-button aria-label="Résa'sport" [routerLink]="''">Résa'sport</a>
     <div fxLayoutGap="50">
-      <a mat-button aria-label="Se connecter" [routerLink]="'user/login'">Se connecter</a>
-      <a mat-flat-button color="accent" aria-label="S'inscrire" [routerLink]="'user/register'">S'inscrire</a>
+      <a mat-button aria-label="Se connecter" [routerLink]="'user/login'" *ngIf="!isLoggedIn">Se connecter</a>
+      <a mat-flat-button color="accent" aria-label="S'inscrire" [routerLink]="'user/register'" *ngIf="!isLoggedIn">S'inscrire</a>
     </div>
   </mat-toolbar>
 </mat-sidenav-container>
