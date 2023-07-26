@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gymService.getGymList()
+    this.gymService.getGyms()
       .subscribe(gymList => this.gymList = gymList);
   }
 

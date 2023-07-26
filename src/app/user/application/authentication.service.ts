@@ -9,8 +9,6 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 export class AuthenticationService {
 
   authUrl = 'api/users';
-  user?: User = undefined;
-  redirectUrl: string;
 
   constructor(private http: HttpClient) {}
 

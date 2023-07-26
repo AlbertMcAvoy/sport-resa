@@ -12,6 +12,9 @@ import {HomeComponent} from "./view/home/home.component";
 import {LocalStorageService} from "./shared/application/local-storage.service";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
+import {ThemeModule} from "./theme/theme.module";
+import {GymModule} from "./gym/gym.module";
+import {SessionModule} from "./session/session.module";
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import {MatButtonModule} from "@angular/material/button";
     BrowserAnimationsModule,
     SharedModule,
     UserModule,
+    GymModule,
+    ThemeModule,
+    SessionModule,
     MatCardModule,
     MatButtonModule
   ],
