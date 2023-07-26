@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable, of} from "rxjs";
+import { BehaviorSubject, Observable, of } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,16 +8,16 @@ export class LocalStorageService {
 
   tokenValue = new BehaviorSubject(this.token);
 
-  set token(value: string | null) {
+  set token(value: number | null) {
     this.tokenValue.next(value);
-    localStorage.setItem('token', value ?? '');
+    localStorage.setItem('user_id', value?.toString() ?? "-1");
   }
 
-  get token(): string | null {
-    return localStorage.getItem('token');
+  get token(): number | null {
+    return parseInt(localStorage.getItem('user_id') ?? "-1");
   }
 
   isLoggedIn(): Observable<boolean> {
-    return of(this.token !== "undefined");
+    return of(this.token !== -1);
   }
 }

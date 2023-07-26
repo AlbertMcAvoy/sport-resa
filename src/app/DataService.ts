@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { User } from './user/domain/User';
 @Injectable({
   providedIn: 'root'
 })
@@ -97,11 +98,11 @@ export class DataService implements InMemoryDbService {
 
   // HTTP POST interceptor
   post(reqInfo: any) {
-      if (reqInfo.id === 'login') {
-        return this.authenticate(reqInfo);
-      }
+    if (reqInfo.id === 'login') {
+      return this.authenticate(reqInfo);
+    }
 
-      return undefined;
+    return undefined;
   }
 
   // mocking authentication happens here
@@ -117,13 +118,14 @@ export class DataService implements InMemoryDbService {
       // if request username and passord are correct
       //  return response with a JSONWebToken
       const { mail, password } = req.body;
+      const user = this.users.find(u => u.mail === mail && u.password === password);
       if (this.users.findIndex(u => u.mail === mail && u.password === password) !== -1)
         return {
           status: 200,
           headers, // reqInfo (line 30)
           url, // reqInfo (line 30)
           body: {
-            token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+            userId: user?.id || -1,
           }
         }
 

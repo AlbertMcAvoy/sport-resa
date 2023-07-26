@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {GymService} from "../../gym/application/gym.service";
-import {Gym} from "../../gym/domain/gym";
-import {LocalStorageService} from "../../shared/application/local-storage.service";
+import { Component, OnInit } from '@angular/core';
+import { GymService } from "../../gym/application/gym.service";
+import { Gym } from "../../gym/domain/gym";
+import { LocalStorageService } from "../../shared/application/local-storage.service";
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     private localStorageService: LocalStorageService
   ) {
     localStorageService.tokenValue.subscribe((nextValue) => {
-      this.isLoggedIn = nextValue !== "undefined";
+      this.isLoggedIn = nextValue !== -1;
     })
   }
 

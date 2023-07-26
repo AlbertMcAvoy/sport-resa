@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
-import {FormGroup} from "@angular/forms";
-import {AuthenticationService} from "../../../application/authentication.service";
-import {LocalStorageService} from "../../../../shared/application/local-storage.service";
+import { Router } from "@angular/router";
+import { FormGroup } from "@angular/forms";
+import { AuthenticationService } from "../../../application/authentication.service";
+import { LocalStorageService } from "../../../../shared/application/local-storage.service";
 
 @Component({
   selector: 'app-public',
@@ -25,7 +25,7 @@ export class PublicComponent {
     this.auth.login($event.value.email, $event.value.password)
       .subscribe({
         next: (data: any) => {
-          this.localStorageService.token = data.token;
+          this.localStorageService.token = data.userId;
           this.router.navigate(['/']);
         },
         error: (err) => {
