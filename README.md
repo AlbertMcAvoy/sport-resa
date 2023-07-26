@@ -1,27 +1,22 @@
 # SportResa
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+## Lancement
 
-## Development server
+Pour lancer le serveur en mode dev, utilisez la commande `npm run start`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Documentation
+### Architecture modulaire et hexagonale
 
-## Code scaffolding
+L'application suit une architecture en module typique d'Angular. Chaque module implémente une architecture hexagonale, on a donc un module pour chaque `domain`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ce choix d'architecture permet de mieux manipuler ce que l'on souhaite afficher à l'utilisateur, notamment grace aux routes. Il permet aussi de plus facilement changer une technologie sans impacter toute la logique métier de notre application.
 
-## Build
+Un module `shared` (appelé `interactor` dans le TP, le nom shared est plus facile à assimiler) existe et comporte les services et vues communes à plusieurs modules (comme les guards ou le service du localStorage).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Pattern smart/dumb
 
-## Running unit tests
+Dans les dossiers `views`, on retrouve un dossier `smart` et un dossier `dumb`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Les 'smart components' sont les composants "métiers" qui se chargeront d'afficher les 'dumb components'. C'est à l'intérieur que l'on retrouvera l'intelligence, c'est-à-dire que le composant 'dumb' ne fera rien d'autres que ce qu'on lui dit de faire ; afficher des données ou remonter des évènements (clique de l'utilisateur).
+De ce fait, ce sont les 'smart components' qui se chargeront d'afficher et gérer les 'dumb components'.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
