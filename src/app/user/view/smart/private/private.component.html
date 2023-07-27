@@ -1,2 +1,27 @@
-<p>private works!</p>
-<p>{{ userLogged.name }}</p>
+<app-admin [userLogged]="userLogged" *ngIf="userLogged.role == 'admin'"></app-admin>
+<app-coach [userLogged]="userLogged" *ngIf="userLogged.role != 'admin' && userLogged.isCoach"></app-coach>
+<app-user [userLogged]="userLogged" *ngIf="userLogged.role != 'admin' && !userLogged.isCoach"></app-user>
+
+<div class="account-container" *ngIf="userLogged">
+    <div class="account-info">
+        <div class="account-info-item account-role">
+            <p>Role :</p>
+            <p>{{ userLogged.role }}</p>
+        </div>
+        <div class="account-info-item account-name">
+            <p>Name :</p>
+            <p>{{ userLogged.name }}</p>
+        </div>
+        <div class="account-info-item account-email">
+            <p>Email :</p>
+            <p>{{ userLogged.mail }}</p>
+        </div>
+        <div class="account-info-item account-city">
+            <p>Ville :</p>
+            <p>{{ userLogged.city }}</p>
+        </div>
+        <div *ngIf="userLogged.isCoach" class="account-info-item coach">
+            <b>Coach diplômé</b>
+        </div>
+    </div>
+</div>

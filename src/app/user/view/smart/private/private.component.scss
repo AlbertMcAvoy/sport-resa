@@ -1,0 +1,18 @@
+.account-container {
+    display: flex;
+
+    .account-info {
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+
+        .account-info-item {
+            display: flex;
+            gap: 12px;
+        }
+
+        .account-role {
+            font-size: 20px;
+        }
+    }
+}

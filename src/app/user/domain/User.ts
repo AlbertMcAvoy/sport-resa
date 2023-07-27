@@ -7,4 +7,5 @@ export class User {
   password: string;
   isCoach: boolean;
   idGym: number;
+  role: string;
 }

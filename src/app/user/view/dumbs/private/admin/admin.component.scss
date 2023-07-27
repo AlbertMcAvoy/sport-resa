@@ -1,0 +1,36 @@
+.actions-admin {
+    text-align: center;
+    margin-top: 50px;
+
+    h3 {
+        font-size: 25px;
+    }
+
+    .actions-admin-cta {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+
+        .button {
+            color: #fff;
+            border-radius: 8px;
+            width: 200px;
+            padding: 10px 20px;
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(95%);
+            }
+        }
+
+        .add-user {
+            background: #673ab7;
+
+        }
+
+        .remove-user {
+            background: red;
+        }
+    }
+}
