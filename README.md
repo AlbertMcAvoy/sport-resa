@@ -75,3 +75,7 @@ Chaque module possède un système de route basé sur le domain qu'il contient :
 ![routage_hierarchie](doc/routage_hierarchie.png)
 
 On note sur ce schéma la hiérarchie des composants avec l'application du pattern smart/dumb.
+
+### Accès au projet
+
+[Voici le lien GitHub de notre projet](https://github.com/AlbertMcAvoy/sport-resa)
