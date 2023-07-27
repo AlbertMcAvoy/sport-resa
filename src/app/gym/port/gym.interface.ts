@@ -1,5 +1,5 @@
 import {Observable} from "rxjs";
-import { Gym } from "../domain/gym";
+import { Gym } from "../domain/Gym";
 
 export interface IGymService {
   getGyms(): Observable<Gym[]>;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Gym} from "../domain/gym";
+import {Gym} from "../domain/Gym";
 import {IGymService} from "../port/gym.interface";
 
 @Injectable({
@@ -22,11 +22,11 @@ export class GymService implements IGymService {
   }
 
   getGym(id: number): Observable<Gym> | undefined {
-    return this.http.get<Gym>(`this.gymUrl/${id}`);
+    return this.http.get<Gym>(`${this.gymUrl}/${id}`);
   }
 
   getGymByName(name: string): Observable<Gym> | undefined {
-    return this.http.get<Gym>(`this.gymUrl/?name=${name}`);
+    return this.http.get<Gym>(`${this.gymUrl}/?name=${name}`);
   }
 
   getGyms(): Observable<Gym[]> {

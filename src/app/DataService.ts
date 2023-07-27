@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { User } from './user/domain/User';
 @Injectable({
   providedIn: 'root'
 })
@@ -60,16 +59,16 @@ export class DataService implements InMemoryDbService {
 
     const sessions = [{
       id: 1,
-      startDate: "25-07-2023",
-      endDate: "25-08-2023",
+      startDate: "25/07/2023 09:00:00",
+      endDate: "25/07/2023 10:00:00",
       limit: 10,
       id_theme: 1,
       id_gym: 1
     },
     {
       id: 2,
-      startDate: "28-07-2023",
-      endDate: "28-08-2023",
+      startDate: "28/07/2023 14:00:00",
+      endDate: "28/07/2023 15:00:00",
       limit: 15,
       id_theme: 2,
       id_gym: 2

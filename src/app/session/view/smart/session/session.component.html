@@ -1,0 +1,6 @@
+<app-session-list *ngIf="router.url === '/session/list'"
+              [sessions]="sessions"
+></app-session-list>
+<app-session-detail *ngIf="router.url.includes('/session/gym/')"
+                [session]="session"
+></app-session-detail>
