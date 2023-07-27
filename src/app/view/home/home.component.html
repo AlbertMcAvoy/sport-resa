@@ -1,12 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col m6 s12" *ngFor="let gym of gymList">
-      <div class="card horizontal">
-        <div class="card-content">
-          <span class="card-title"> {{ gym.name }} </span>
-          <p> {{ gym.city }} - {{ gym.zipCode }} </p>
-          <p> Ouvert de : {{ gym.opening }} à {{ gym.closing }}</p>
-          <a mat-flat-button color="accent" aria-label="Réserver" (click)="book()" *ngIf="isLoggedIn">Réserver</a>
+    <div class="col m12">
+      <div class="card">
+        <div class="card-content center">
+          <span class="card-title center"> Salles de sport </span>
+          <a mat-flat-button color="primary" aria-label="Salles de sport" [routerLink]="'gym/list'">Consulter les salles de sport</a>
         </div>
       </div>
     </div>

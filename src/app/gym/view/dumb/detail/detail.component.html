@@ -1,0 +1,16 @@
+<div class="container">
+  <a mat-flat-button style="margin: 15px" aria-label="Retour à la liste des salles" [routerLink]="'/gym/list'">Retour à la liste des salles</a>
+  <div class="row">
+    <div class="col m12">
+      <div class="card">
+        <div class="card-content center">
+          <span class="card-title"> {{ gym.name }} </span>
+          <p> {{ gym.city }} - {{ gym.zipCode }} </p>
+          <p> Ouvert de {{ gym.opening }} à {{ gym.closing }}</p>
+
+          <a mat-flat-button color="primary" aria-label="Voir les séances">Voir les séances</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

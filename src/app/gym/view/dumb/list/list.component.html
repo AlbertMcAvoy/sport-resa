@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col m6 s12" *ngFor="let gym of gyms">
+      <div class="card">
+        <div class="card-content center">
+          <span class="card-title"> {{ gym.name }} </span>
+          <p> {{ gym.city }} - {{ gym.zipCode }} </p>
+          <p> Ouvert de {{ gym.opening }} à {{ gym.closing }}</p>
+
+          <a mat-flat-button color="primary" aria-label="Détail de la salle" [routerLink]="'/gym/detail/' + gym.id">Consulter les détails</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

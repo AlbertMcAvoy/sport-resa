@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GymService } from "../../gym/application/gym.service";
-import { Gym } from "../../gym/domain/gym";
+import { Gym } from "../../gym/domain/Gym";
 import { LocalStorageService } from "../../shared/application/local-storage.service";
 
 @Component({

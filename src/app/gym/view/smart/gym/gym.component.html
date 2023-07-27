@@ -1,0 +1,6 @@
+<app-gym-list *ngIf="router.url === '/gym/list'"
+              [gyms]="gyms"
+></app-gym-list>
+<app-gym-detail *ngIf="router.url.includes('/gym/detail/')"
+              [gym]="gym"
+></app-gym-detail>
