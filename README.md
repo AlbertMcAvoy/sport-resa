@@ -5,6 +5,9 @@
 Pour lancer le serveur en mode dev, utilisez la commande `npm run start`.
 
 ## Documentation
+### Schéma de modèle de données
+![Schema_modele_donnees](doc/modele_donnees.png)
+
 ### Architecture modulaire et hexagonale
 
 L'application suit une architecture en module typique d'Angular. Chaque module implémente une architecture hexagonale, on a donc un module pour chaque `domain`.
