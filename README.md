@@ -1,5 +1,17 @@
 # SportResa
 
+## Bilan de la réalisation
+
+Par manque de temps, la création d'un compte n'a pas pu être faite, pour tester la connexion et les accès au compte, un compte admin est dispo avec ces identifiants : admin@admin / admin (d'autres utilisateurs existent, cf. [DataService](src/app/DataService.ts))
+
+L'application n'étant pas exhaustive, nous n'avons pas réalisé de tests de performances pertinents, voir le fichier [main.ts](src/main.ts) pour l'activation des outils.
+
+Le module thème n'a pas été réalisé, la réservation non plus.
+
+Il est possible de consulter les salles de sports, les détails, de consulter une séance disponible pour cette salle.
+
+Il est aussi possible de consulter son compte et ses informations d'utilisateur.
+
 ## Lancement
 
 Pour lancer le serveur en mode dev, utilisez la commande `npm run start`.
