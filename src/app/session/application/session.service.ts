@@ -29,6 +29,10 @@ export class SessionService implements ISessionService {
     return this.http.get<Session>(`${this.sessionUrl}/?name=${name}`);
   }
 
+  getSessionByGymId(gym_id: number) {
+    return this.http.get<Session>(`${this.sessionUrl}/?id_gym=${gym_id}`);
+  }
+
   getSessions(): Observable<Session[]> {
     return this.http.get<Session[]>(`${this.sessionUrl}`);
   }

@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col m6 s12" *ngFor="let session of sessions">
+      <div class="card">
+        <div class="card-content center">
+          <span class="card-title"> Séance {{ session.id }}</span>
+          <p> Du {{ session.startDate }} au {{ session.endDate }}</p>
+          <p> Il y a {{ session.limit }} places. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

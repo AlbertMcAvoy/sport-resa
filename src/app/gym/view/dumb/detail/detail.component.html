@@ -8,7 +8,7 @@
           <p> {{ gym.city }} - {{ gym.zipCode }} </p>
           <p> Ouvert de {{ gym.opening }} à {{ gym.closing }}</p>
 
-          <a mat-flat-button color="primary" aria-label="Voir les séances">Voir les séances</a>
+          <a mat-flat-button color="primary" aria-label="Voir les séances" [routerLink]="'/session/gym/' + gym.id">Voir les séances</a>
         </div>
       </div>
     </div>

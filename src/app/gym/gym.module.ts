@@ -10,7 +10,7 @@ import { DetailComponent } from './view/dumb/detail/detail.component';
 const gymRoutes: Routes = [
   { path: `list`, component: GymComponent, resolve: {gyms: gymsResolve} },
   { path: `detail/:id`, component: GymComponent, resolve: {gym: gymResolve} },
-
+  { path: `**`, redirectTo: '/'}
 ]
 
 @NgModule({

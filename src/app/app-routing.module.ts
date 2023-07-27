@@ -5,7 +5,8 @@ import {HomeComponent} from "./view/home/home.component";
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
-  { path: 'gym', loadChildren: () => import('./gym/gym.module').then(m => m.GymModule) }
+  { path: 'gym', loadChildren: () => import('./gym/gym.module').then(m => m.GymModule) },
+  { path: 'session', loadChildren: () => import('./session/session.module').then(m => m.SessionModule) }
 ];
 
 @NgModule({
