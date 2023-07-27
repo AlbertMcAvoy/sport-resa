@@ -1,5 +1,9 @@
 # SportResa
 
+### Accès au projet
+
+[Voici le lien GitHub de notre projet](https://github.com/AlbertMcAvoy/sport-resa)
+
 ## Bilan de la réalisation
 
 Par manque de temps, la création d'un compte n'a pas pu être faite, pour tester la connexion et les accès au compte, un compte admin est dispo avec ces identifiants : admin@admin / admin (d'autres utilisateurs existent, cf. [DataService](src/app/DataService.ts))
@@ -75,7 +79,3 @@ Chaque module possède un système de route basé sur le domain qu'il contient :
 ![routage_hierarchie](doc/routage_hierarchie.png)
 
 On note sur ce schéma la hiérarchie des composants avec l'application du pattern smart/dumb.
-
-### Accès au projet
-
-[Voici le lien GitHub de notre projet](https://github.com/AlbertMcAvoy/sport-resa)
