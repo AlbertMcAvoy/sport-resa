@@ -13,4 +13,10 @@ describe('LocalStorageService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should set the ID', () => {
+    service.token = 123456;
+
+    expect(service.token).toBe(123456);
+  });
 });
