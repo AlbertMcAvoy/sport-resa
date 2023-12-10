@@ -6,6 +6,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -19,6 +20,7 @@ describe('LoginComponent', () => {
         ReactiveFormsModule,
         MatFormFieldModule,
         MatInputModule,
+        RouterTestingModule
       ],
       declarations: [ LoginComponent ]
     })
