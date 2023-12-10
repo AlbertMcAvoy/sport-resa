@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 20
       - name: npm install and npm run CI commands
-        run: |
+      - run: |
           npm i
           npm run test:ci
           npm run build:ci
