@@ -1,18 +1,18 @@
 name: ci
 on:
-  pull_request:
-    branches: [ master ]
+  - pull_request
 jobs:
   ci:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
-      - name Use Node 20
+      - name: Use Node 20
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - name: npm install and npm run CI commands
-        run: |
-          npm i
-          npm run test:ci
-          npm run build:ci
+      - name: Run npm install
+      - run: npm i
+      - name: Run Angular test
+      - run: npm run test:ci
+      - name: Run Build
+      - run: npm run build:ci
