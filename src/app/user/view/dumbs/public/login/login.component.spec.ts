@@ -7,6 +7,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {RouterTestingModule} from "@angular/router/testing";
+import {provideAnimations} from "@angular/platform-browser/animations";
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -22,7 +23,8 @@ describe('LoginComponent', () => {
         MatInputModule,
         RouterTestingModule
       ],
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent ],
+      providers: [ provideAnimations() ]
     })
     .compileComponents();
 

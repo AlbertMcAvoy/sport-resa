@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PrivateComponent } from './private.component';
 import {HttpClientModule} from "@angular/common/http";
 import {User} from "../../../domain/User";
+import {CoachComponent} from "../../dumbs/private/coach/coach.component";
 
 let getUser = () => {
   let user = new User();
@@ -26,7 +27,10 @@ describe('PrivateComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      declarations: [ PrivateComponent ]
+      declarations: [
+        PrivateComponent,
+        CoachComponent
+      ]
     })
     .compileComponents();
 
