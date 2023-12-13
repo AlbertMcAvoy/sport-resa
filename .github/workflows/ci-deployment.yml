@@ -20,8 +20,6 @@ jobs:
     runs-on: ubuntu-22.04
     if: ${{ always() && needs.ci.result == 'success' }}
     needs: [ci]
-    env:
-      IMAGE_NAME: "fake-angular-app"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,4 +36,4 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/fake-angular-app:latest
