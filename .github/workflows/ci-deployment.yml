@@ -1,6 +1,9 @@
 name: ci-deployment
 on:
   pull_request:
+    branches:
+        - '*'
+  push:
       branches:
         - master
 jobs:
@@ -20,7 +23,7 @@ jobs:
         run: npm run build:ci
   deployment:
     runs-on: ubuntu-22.04
-    if: ${{ always() && contains('refs/heads/main', github.ref) && github.event.pull_request.merged == true && needs.ci.result == 'success' }}
+    if: ${{ contains('refs/heads/main', github.ref) && github.event_name == 'push' }}
     needs: [ci]
     steps:
       - name: Checkout
