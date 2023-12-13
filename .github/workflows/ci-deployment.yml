@@ -1,6 +1,6 @@
 name: ci-deployment
 on:
-  - pull_request:
+  pull_request:
       types:
         - closed
 jobs:
