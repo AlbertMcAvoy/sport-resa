@@ -19,6 +19,7 @@ jobs:
   deployment:
     runs-on: ubuntu-22.04
     if: ${{ always() && needs.ci.result == 'success' }}
+    needs: [ci]
     env:
       IMAGE_NAME: "fake-angular-app"
     steps:
