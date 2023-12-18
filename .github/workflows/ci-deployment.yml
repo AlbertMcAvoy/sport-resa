@@ -21,7 +21,6 @@ jobs:
         run: npm run test:ci
       - name: Run Build
         run: npm run build:ci
-      - name: Hadolint
         uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: docker/Dockerfile
