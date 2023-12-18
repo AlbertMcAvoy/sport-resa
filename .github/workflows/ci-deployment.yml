@@ -50,7 +50,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/fake-angular-app:latest
   tag-deployment:
     runs-on: ubuntu-22.04
-    if: (github.event_name == 'push' && github.ref_type == 'tag')
+    if: github.event_name == 'push' && github.ref_type == 'tag'
     needs: [ ci, deployment-latest ]
     steps:
       - name: Checkout
