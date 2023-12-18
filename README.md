@@ -1,8 +1,39 @@
 # SportResa
 
-### Accès au projet
+## CI/CD
 
-[Voici le lien GitHub de notre projet](https://github.com/AlbertMcAvoy/sport-resa)
+Ce projet a été enrichi dans le cadre d'un projet CI/CD. Il propose un livrable sous forme d'une image docker.
+
+### CI
+Pour lancer le projet, voir plus bas la section Lancement.
+
+Pour passer les tests du workflow, il vous faudra jouer ces commandes dans votre environnement :
+
+```bash
+npm i
+```
+```bash
+npm run test:ci
+```
+```bash
+npm run build:ci
+```
+```bash
+hadolint Dockerfile
+```
+
+Cette séquence est joué sur chaque commit, la branche principale étant protégée pour ne recevoir que des commit de merge.
+Ainsi, chaque commit dans une Pull request est vérifié, et le commit de merge aussi.
+
+Si les scénarios ne sont pas bons, la PR est refusée.
+
+### Déploiement Continu
+
+Lorsqu'une Pull Request est merge, on va rejouer les scénarios de la CI, et si tout est bon, on va build une image docker [albertmcavoy/fake-angular-app:latest](https://hub.docker.com/r/albertmcavoy/fake-angular-app) et la push.
+
+### Livraison Continue
+
+Lorsqu'un tag est push sur main, on joue les scénarios de la CI et du déploiment continu. En plus, on va build une image docker [albertmcavoy/fake-angular-app:tag](https://hub.docker.com/r/albertmcavoy/fake-angular-app) et la push.
 
 ## Bilan de la réalisation
 
