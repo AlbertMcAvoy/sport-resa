@@ -27,7 +27,7 @@ jobs:
           dockerfile: docker/Dockerfile
   deployment-latest:
     runs-on: ubuntu-22.04
-    if: (github.ref == 'refs/heads/main' || (github.event_name == 'push' && github.ref_type == 'tag'))
+    if: (github.ref == 'refs/heads/main' || github.event_name == 'push')
     needs: [ci]
     steps:
       - name: Checkout
