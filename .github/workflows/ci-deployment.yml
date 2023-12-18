@@ -45,7 +45,7 @@ jobs:
   tag-deployment:
     runs-on: ubuntu-22.04
     if: (github.event_name == 'push' && github.ref_type == 'tag')
-    needs: [ ci ]
+    needs: [ ci, deployment-latest ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
