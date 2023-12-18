@@ -42,8 +42,7 @@ jobs:
           file: ./docker/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/fake-angular-app:latest
-  manual-deployment:
-    name: Push on docker
+  tag-deployment:
     runs-on: ubuntu-22.04
     if: (github.event_name == 'push' && github.ref_type == 'tag')
     needs: [ ci ]
@@ -57,7 +56,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: Build and push fake-angular-app:${{github.ref_name}}
+      - name: Build and push albertmcavoy/fake-angular-app:${{github.ref_name}}
         uses: docker/build-push-action@v5
         with:
           context: .
