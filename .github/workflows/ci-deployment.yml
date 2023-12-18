@@ -21,7 +21,7 @@ jobs:
         run: npm run test:ci
       - name: Run Build
         run: npm run build:ci
-        uses: hadolint/hadolint-action@v3.1.0
+      - uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: docker/Dockerfile
       - name: Update Pull Request
